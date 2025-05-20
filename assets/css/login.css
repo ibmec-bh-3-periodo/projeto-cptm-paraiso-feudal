@@ -1,0 +1,92 @@
+*{
+    margin: 0;
+    border: 0;
+}
+@media screen and (max-width: 420px) {
+    body{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-image: url(../imagem/WhatsApp\ Image\ 2025-05-08\ at\ 16.48.45.jpeg);
+        background-size: 560px;
+        padding-top: 12px;
+        position: relative;
+        
+    }
+    #logo{
+        width: 100px;
+        height: 88px;
+        
+    }
+    #cptm{
+        padding-top: 10px;
+        font-size: 48px;
+        color: #2D3975;
+    }
+    #bvd{
+        font-size: 40px;
+        color: #2D3975;
+    }
+    #forme{
+        padding-top: 260px;
+        
+    }
+    #email{
+        width: 315px;
+        height: 55px;
+        border-radius: 20px;
+        background-color: white; 
+        
+    }
+    #senha{
+        width: 315px;
+        height: 55px;
+        border-radius: 20px;
+        background-color: white;
+        
+    }
+    .aa{
+        color: #ffffff;
+        font-size: 25px;
+        padding: 10px;
+    }
+    
+    #a1{
+        position: relative;
+        color: white;
+        font-size: 18px;
+        bottom: 50px;
+        left: 70px;        
+    }
+    #a0{
+        position: relative;
+        color: white;
+        font-size: 22px;
+        top: 45px;
+        right: 60px;
+    }
+    #a2{
+        position: relative;
+        color: white;
+        font-size: 22px;
+        top: 19px;
+        left: 95px;
+
+    }
+    #a3{
+        color: white;
+        font-size: 16px;
+        top: 50px;
+        position: relative;
+        right: 120px;
+    }
+    #a4{
+        position: relative;
+        font-size: 16px;
+        position: relative;
+        color: white;
+        top: 33px;
+        left: 100px;
+
+    }
+}
