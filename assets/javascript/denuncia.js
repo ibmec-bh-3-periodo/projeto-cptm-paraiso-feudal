@@ -28,23 +28,52 @@ function duringDrag(x) {
     text.style.opacity = opacity;
 }
 
+const botoes = document.getElementById('botoes');
+const cpfContainer = document.getElementById('cpf-container');
+const voltarBtn = document.getElementById('voltar');
+const cadeado = document.getElementById('cadeado');
+const inputCpf = document.getElementById('cpf-input');
 
-// Função para soltar
+function ativarTelaCpf() {
+    button.style.transform = `translateX(${maxMove}px)`;
+    button.style.pointerEvents = 'none'; // trava o botão
+    cadeado.src = '../imagens/setaCircular.png'; // seta (adicione a imagem no caminho correto)
+
+    botoes.classList.add('hidden');
+    button.classList.add('hidden');
+    cpfContainer.classList.remove('hidden');
+}
+
+function voltarTelaInicial() {
+    currentX = 0;
+    button.style.transform = `translateX(0px)`;
+    button.style.pointerEvents = 'auto';
+    cadeado.src = '../imagens/cadeado.png'; // volta pro cadeado normal
+
+    botoes.classList.remove('hidden');
+    button.classList.remove('hidden');
+    cpfContainer.classList.add('hidden');
+    text.style.opacity = 0.7;
+
+    inputCpf.value = '';
+}
+
+voltarBtn.addEventListener('click', voltarTelaInicial);
+
+// Modifique seu endDrag para isso:
 function endDrag() {
     if (!isDragging) return;
     isDragging = false;
 
     if (currentX >= maxMove) {
-        alert('Alarme desativado!');
-        // Aqui você pode adicionar sua função de desbloqueio
+        ativarTelaCpf();
+    } else {
+        currentX = 0;
+        button.style.transform = `translateX(0px)`;
+        text.style.opacity = 0.7;
     }
-
-    currentX = 0;
-    button.style.transform = `translateX(0px)`;
-
-    text.style.opacity = 0.7;
-
 }
+
 
 // Eventos para desktop
 button.addEventListener('mousedown', e => startDrag(e.clientX));
@@ -105,5 +134,24 @@ meEncontre.addEventListener('click', () => {
         alert('Você parou de compartilhar a sua localização')
     }
 });
+
+
+const ligar190 = document.getElementById('ligar190');
+const iconeLigar = ligar190.querySelector('img');
+const textoLigar = ligar190.querySelector('h4');
+
+ligar190.addEventListener('mousedown', () => {
+    ligar190.style.backgroundColor = '#ED1C24';
+    textoLigar.style.color = '#F4F4F4';
+    iconeLigar.src = '../imagens/telefoneBranco.png'; // Ícone pressionado
+});
+
+ligar190.addEventListener('mouseup', () => {
+    ligar190.style.backgroundColor = '';
+    textoLigar.style.color = '';
+    iconeLigar.src = '../imagens/telefone.png'; // Ícone normal
+});
+
+
 
 
