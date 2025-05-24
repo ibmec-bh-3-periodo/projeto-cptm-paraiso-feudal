@@ -191,6 +191,7 @@ h3{
     font-weight: 700;
     font-size: 16px;
     color: var(--cor-vermelho-cptm);
+    transition: background-color 0.1s;
  }
 
  #meEncontre{
@@ -207,6 +208,7 @@ h3{
     font-weight: 700;
     font-size: 16px;
     color: var(--cor-vermelho-cptm);
+    transition: background-color 0.1s;
  }
 
  #ligar190{
@@ -226,46 +228,51 @@ h3{
  }
 
  
-         .slider-container {
-            position: absolute;
-            left: 57px;
-            top: 831px;
-            width: 298px;
-            height: 66px;
-            background-color: rgba(67, 66, 66, 0.3);;
-            border-radius: 100px;
-            display: flex;
-            align-items: center;
-            padding: 3px;
-        }
+.slider-container {
+    position: absolute;
+    left: 57px;
+    top: 831px;
+    width: 298px;
+    height: 66px;
+    background-color: rgba(67, 66, 66, 0.3);;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    padding: 3px;
+}
 
-        .slider-text {
-            position: absolute;
-            left: 74px;
-            font-size: 13px;
-            font-family: 'inter';
-            color: white;
-            opacity: 70%;
-            font-weight: 700;
-        }
+.slider-text {
+    position: absolute;
+    left: 74px;
+    font-size: 13px;
+    font-family: 'inter';
+    color: white;
+    opacity: 70%;
+    font-weight: 700;
+}
 
-        .slider-button {
-            width: 60px;
-            height: 60px;
-            background-color: rgba(255, 255, 255, 0.7);
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            user-select: none;
-            transition: background-color 0.3s;
-        }
+.slider-button {
+    width: 60px;
+    height: 60px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.3s;
+}
 
-        #cadeado{
-            pointer-events: none;
-        }
+#cadeado{
+    pointer-events: none;
+}
 
-        .slider-button:hover {
-            background-color: #ddd;
-        }
+.slider-button:hover {
+    background-color: #ddd;
+}
+
+.modoClaro{
+  background-color: #ED1C24;
+  color: #ddd;
+ }

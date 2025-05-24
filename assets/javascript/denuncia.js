@@ -57,3 +57,53 @@ document.addEventListener('touchmove', e => {
     duringDrag(e.touches[0].clientX);
 });
 document.addEventListener('touchend', endDrag);
+
+
+const sirene = document.getElementById('sirene');
+const iconeSirene = document.getElementById('icone-sirene');
+const textoSirene = document.getElementById('texto-sirene');
+const audioSirene = new Audio('../sons/sirene.wav');
+
+let sireneAtiva = false;
+
+sirene.addEventListener('click', () => {
+    sireneAtiva = !sireneAtiva;
+
+    if (sireneAtiva) {
+        sirene.style.backgroundColor = '#ED1C24';
+        textoSirene.style.color = '#F4F4F4';
+        iconeSirene.src = '../imagens/sireneBranca.png';
+        audioSirene.play();
+    } else {
+        sirene.style.backgroundColor = ''; // volta ao padrão
+        textoSirene.style.color = '';
+        iconeSirene.src = '../imagens/sirene.png'; // imagem padrão
+        audioSirene.pause();
+        audioSirene.currentTime = 0;
+    }
+});
+
+const meEncontre = document.getElementById('meEncontre');
+const iconeMeEncontre = meEncontre.querySelector('img#escudo');
+const textoMeEncontre = meEncontre.querySelector('h4#texto-meEncontre');
+
+let encontreAtivo = false;
+
+meEncontre.addEventListener('click', () => {
+    encontreAtivo = !encontreAtivo;
+
+    if (encontreAtivo) {
+        meEncontre.style.backgroundColor = '#ED1C24';
+        textoMeEncontre.style.color = '#F4F4F4';
+        iconeMeEncontre.src = '../imagens/escudoBranco.png'; // Ícone ativo
+
+        alert('              🚓 As autoridades locais já estão indo até você 🚓        Mantenha o botão ligado para continuar compartilhando a sua localização.');
+    } else {
+        meEncontre.style.backgroundColor = '';
+        textoMeEncontre.style.color = '';
+        iconeMeEncontre.src = '../imagens/escudo.png'; // Ícone normal
+        alert('Você parou de compartilhar a sua localização')
+    }
+});
+
+
