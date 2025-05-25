@@ -330,6 +330,10 @@ h3{
     left: 50px;
 }
 
+#cpf-button:hover{
+    background-color: #ddd;
+}
+
 #cpf-button img{
     pointer-events: none;
 }
