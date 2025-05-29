@@ -36,8 +36,8 @@ const inputCpf = document.getElementById('cpf-input');
 
 function ativarTelaCpf() {
     button.style.transform = `translateX(${maxMove}px)`;
-    button.style.pointerEvents = 'none'; // trava o botão
-    cadeado.src = '../imagens/setaCircular.png'; // seta (adicione a imagem no caminho correto)
+    button.style.pointerEvents = 'none'; 
+    cadeado.src = '../imagem/setaCircular.png'; 
 
     botoes.classList.add('hidden');
     button.classList.add('hidden');
@@ -48,7 +48,7 @@ function voltarTelaInicial() {
     currentX = 0;
     button.style.transform = `translateX(0px)`;
     button.style.pointerEvents = 'auto';
-    cadeado.src = '../imagens/cadeado.png'; // volta pro cadeado normal
+    cadeado.src = '../imagem/cadeado.png'; 
 
     botoes.classList.remove('hidden');
     button.classList.remove('hidden');
@@ -60,7 +60,7 @@ function voltarTelaInicial() {
 
 voltarBtn.addEventListener('click', voltarTelaInicial);
 
-// Modifique seu endDrag para isso:
+
 function endDrag() {
     if (!isDragging) return;
     isDragging = false;
@@ -75,12 +75,12 @@ function endDrag() {
 }
 
 
-// Eventos para desktop
+
 button.addEventListener('mousedown', e => startDrag(e.clientX));
 document.addEventListener('mousemove', e => duringDrag(e.clientX));
 document.addEventListener('mouseup', endDrag);
 
-// Eventos para mobile
+
 button.addEventListener('touchstart', e => startDrag(e.touches[0].clientX));
 document.addEventListener('touchmove', e => {
     duringDrag(e.touches[0].clientX);
@@ -101,12 +101,12 @@ sirene.addEventListener('click', () => {
     if (sireneAtiva) {
         sirene.style.backgroundColor = '#ED1C24';
         textoSirene.style.color = '#F4F4F4';
-        iconeSirene.src = '../imagens/sireneBranca.png';
+        iconeSirene.src = '../imagem/sireneBranca.png';
         audioSirene.play();
     } else {
-        sirene.style.backgroundColor = ''; // volta ao padrão
+        sirene.style.backgroundColor = ''; 
         textoSirene.style.color = '';
-        iconeSirene.src = '../imagens/sirene.png'; // imagem padrão
+        iconeSirene.src = '../imagem/sirene.png'; 
         audioSirene.pause();
         audioSirene.currentTime = 0;
     }
@@ -124,13 +124,13 @@ meEncontre.addEventListener('click', () => {
     if (encontreAtivo) {
         meEncontre.style.backgroundColor = '#ED1C24';
         textoMeEncontre.style.color = '#F4F4F4';
-        iconeMeEncontre.src = '../imagens/escudoBranco.png'; // Ícone ativo
+        iconeMeEncontre.src = '../imagem/escudoBranco.png'; 
 
         alert('              🚓 As autoridades locais já estão indo até você 🚓        Mantenha o botão ligado para continuar compartilhando a sua localização.');
     } else {
         meEncontre.style.backgroundColor = '';
         textoMeEncontre.style.color = '';
-        iconeMeEncontre.src = '../imagens/escudo.png'; // Ícone normal
+        iconeMeEncontre.src = '../imagem/escudo.png';
         alert('Você parou de compartilhar a sua localização')
     }
 });
@@ -143,13 +143,13 @@ const textoLigar = ligar190.querySelector('h4');
 ligar190.addEventListener('mousedown', () => {
     ligar190.style.backgroundColor = '#ED1C24';
     textoLigar.style.color = '#F4F4F4';
-    iconeLigar.src = '../imagens/telefoneBranco.png'; // Ícone pressionado
+    iconeLigar.src = '../imagem/telefoneBranco.png'; 
 });
 
 ligar190.addEventListener('mouseup', () => {
     ligar190.style.backgroundColor = '';
     textoLigar.style.color = '';
-    iconeLigar.src = '../imagens/telefone.png'; // Ícone normal
+    iconeLigar.src = '../imagem/telefone.png'; 
 });
 
 

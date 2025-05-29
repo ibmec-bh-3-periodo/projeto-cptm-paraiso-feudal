@@ -121,7 +121,7 @@ h2{
 main{
     width: 100%;
     height: 562px;
-    background-image: url(../imagens/imagemVídeo.jpg);
+    background-image: url(../imagem/imagemVídeo.jpg);
     background-position: center;
     background-size: cover;
 }
