@@ -1,0 +1,13 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --vermelho-cptm: #ED1C24;
+    --azul-principal: #1B4680;
+    --branco-sujo:#f4f4f4;
+    --preto-font:#050505;
+}
+
