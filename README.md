@@ -68,7 +68,7 @@ Voltada para situações de emergência, possibilitando que o usuário **solicit
 ---
 
 ### 📝 Tela de Formulário de Denúncia — *João Pedro*
-Permite o **registro detalhado de ocorrências**, oferecendo uma ferramenta completa para comunicação de problemas durante o uso do trem.
+Permite o **registro detalhado de ocorrências**, oferecendo uma ferramenta completa para comunicação de problemas durante o uso do tem.
 
 ---
 
