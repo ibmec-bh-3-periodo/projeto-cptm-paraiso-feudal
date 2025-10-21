@@ -89,6 +89,15 @@
       "senha": "89089",
       "saldo": 0,
       "alerta": false
+    },
+    {
+      "id": 11,
+      "nome": "oaulogostoso",
+      "cpf": "uruiroiewfoijefw",
+      "email": "oaulogostoso@gmail.com",
+      "senha": "jefbjkfbkjf",
+      "saldo": 0,
+      "alerta": false
     }
   ]
 }
