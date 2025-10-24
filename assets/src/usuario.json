@@ -134,6 +134,15 @@
       "senha": "75878953454",
       "saldo": 0,
       "alerta": false
+    },
+    {
+      "id": 16,
+      "nome": "bendonecarmo",
+      "cpf": "14205551622",
+      "email": "bendonecarmo@gmail.com",
+      "senha": "2003suetly",
+      "saldo": 0,
+      "alerta": false
     }
   ]
 }
