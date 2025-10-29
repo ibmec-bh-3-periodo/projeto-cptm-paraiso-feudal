@@ -6,7 +6,7 @@
       "cpf": "12345678901",
       "email": "ana.souza@example.com",
       "senha": "$@nasouz@",
-      "saldo": 15,
+      "saldo": 108.6,
       "alerta": false
     },
     {
@@ -186,6 +186,15 @@
       "cpf": "12345678765",
       "email": "thombenjamim@gmail.com",
       "senha": "gdhegjlbaefbkjaef",
+      "saldo": 0,
+      "alerta": false
+    },
+    {
+      "id": 22,
+      "nome": "Dantas",
+      "cpf": "213423534534",
+      "email": "arthursouzaderezende@gmail.com",
+      "senha": "sdfsdfgsdf",
       "saldo": 0,
       "alerta": false
     }
