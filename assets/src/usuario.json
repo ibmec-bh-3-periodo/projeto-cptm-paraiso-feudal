@@ -346,6 +346,28 @@
       "cpf": "01946996688",
       "email": "cuzikado@hotmail.com",
       "senha": "caralhao",
+      "nome": "Temporário",
+      "cpf": "8996",
+      "email": "piroka@gmail.com",
+      "senha": "09",
+      "saldo": 0,
+      "alerta": false
+    },
+    {
+      "id": 40,
+      "nome": "Temporário",
+      "cpf": "550000",
+      "email": "990909@gmail.com",
+      "senha": "0909",
+      "saldo": 0,
+      "alerta": false
+    },
+    {
+      "id": 41,
+      "nome": "Temporário",
+      "cpf": "909008",
+      "email": "989898@gmail.com",
+      "senha": "67543@",
       "saldo": 0,
       "alerta": false
     }
