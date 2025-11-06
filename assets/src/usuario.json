@@ -339,6 +339,15 @@
       "senha": "8989",
       "saldo": 0,
       "alerta": false
+    },
+    {
+      "id": 39,
+      "nome": "Thales",
+      "cpf": "01946996688",
+      "email": "cuzikado@hotmail.com",
+      "senha": "caralhao",
+      "saldo": 0,
+      "alerta": false
     }
   ]
 }
