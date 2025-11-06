@@ -25,7 +25,7 @@
       "email": "camila.pereira@example.com",
       "senha": "c@mil@pere1r@",
       "saldo": 23,
-      "alerta": false
+      "alerta": true
     },
     {
       "id": 4,
@@ -346,10 +346,6 @@
       "cpf": "01946996688",
       "email": "cuzikado@hotmail.com",
       "senha": "caralhao",
-      "nome": "Temporário",
-      "cpf": "8996",
-      "email": "piroka@gmail.com",
-      "senha": "09",
       "saldo": 0,
       "alerta": false
     },
