@@ -342,6 +342,10 @@
     },
     {
       "id": 39,
+      "nome": "Thales",
+      "cpf": "01946996688",
+      "email": "cuzikado@hotmail.com",
+      "senha": "caralhao",
       "nome": "Temporário",
       "cpf": "8996",
       "email": "piroka@gmail.com",
