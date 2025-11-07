@@ -366,6 +366,15 @@
       "senha": "67543@",
       "saldo": 0,
       "alerta": false
+    },
+    {
+      "id": 42,
+      "nome": "Luis",
+      "cpf": "900",
+      "email": "tamara@gmail.com",
+      "senha": "132",
+      "saldo": 62.4,
+      "alerta": true
     }
   ]
 }
