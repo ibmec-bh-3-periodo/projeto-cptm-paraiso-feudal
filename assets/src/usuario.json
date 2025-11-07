@@ -15,7 +15,7 @@
       "cpf": "98765432100",
       "email": "bruno.oliveira@example.com",
       "senha": "bruno_oliv",
-      "saldo": 900,
+      "saldo": 915.6,
       "alerta": false
     },
     {
@@ -211,7 +211,7 @@
       "cpf": "0000000000",
       "email": "0000@gmail.com",
       "senha": "0000",
-      "saldo": 0,
+      "saldo": 26,
       "alerta": false
     },
     {
