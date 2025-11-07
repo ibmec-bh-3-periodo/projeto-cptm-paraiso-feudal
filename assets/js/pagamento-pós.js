@@ -34,7 +34,7 @@ comprarBotao.addEventListener("click", async (event) => {
         return;
     }
 
-    const email = localStorage.getItem("userEmail"); // Corrigido para usar 'userEmail'
+    const email = localStorage.getItem("userEmail"); 
     if (!email) {
         alert("Usuário não logado.");
         return;
@@ -54,7 +54,7 @@ comprarBotao.addEventListener("click", async (event) => {
 
         if (response.ok) {
             alert("Compra realizada com sucesso!");
-            window.location.reload(); // Atualiza a página para refletir o novo saldo
+            window.location.reload(); 
         } else {
             const errorData = await response.json();
             alert(`Erro ao realizar a compra: ${errorData.mensagem}`);
@@ -76,7 +76,7 @@ comprarBotao.addEventListener("click", async (event) => {
         });
     }
 
-// Carrega os dados do usuário ao carregar a página
+
 document.addEventListener("DOMContentLoaded", async () => {
     const email = localStorage.getItem("userEmail");
     const user = usuarios.find((u) => u.email === email);
