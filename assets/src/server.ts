@@ -144,6 +144,28 @@ server.put("/api/usuario/saldo", (req: Request, res: Response) => {
         return res.status(500).json({ mensagem: "Erro interno do servidor" });
     }
 })
+//rota get saldo
+server.get("/api/usuario/saldo", (req: Request, res: Response) => {
+    try {
+        const email = req.query.email as string;
+
+        if (!email) {
+            return res.status(400).json({ mensagem: "Email é obrigatório" });
+        }
+
+        const db = readDB();
+        const usuario = db.usuarios.find((u: any) => u.email === email);
+
+        if (!usuario) {
+            return res.status(404).json({ mensagem: "Usuário não encontrado" });
+        }
+
+        return res.status(200).json({ saldo: usuario.saldo });
+    } catch (error) {
+        console.error("[GET /api/usuario/saldo] Erro:", error);
+        return res.status(500).json({ mensagem: "Erro interno do servidor" });
+    }
+});
 
 /**
  * GET /api/estacoes

@@ -65,28 +65,9 @@ comprarBotao.addEventListener("click", async (event) => {
     }
 });
 
-// Carrega os dados do usuário ao carregar a página
-document.addEventListener("DOMContentLoaded", async () => {
-    const usuarios = JSON.parse(localStorage.getItem("usuarios") || "[]");
-    const email = localStorage.getItem("userEmail");
-    const user = usuarios.find((u) => u.email === email);
 
-    if (user) {
-        const boasEl = document.getElementById("boas-vindas") || document.querySelector(".logo h1");
-        if (boasEl) {
-            const primeiroNome = user.nome.split(" ")[0] || "Usuário";
-            boasEl.textContent = `Olá, ${primeiroNome}`;
-        }
 
-        const saldoEl = document.getElementById("dinheiro");
-        if (saldoEl) {
-            saldoEl.textContent = `R$ ${Number(user.saldo).toFixed(2).replace(".", ",")}`;
-        }
-    } else {
-        console.warn("Usuário não encontrado no localStorage.");
-    }
-
-    const voltarEl = document.getElementById("voltar") || document.getElementById("divvoltar");
+    const voltarEl = document.getElementById("divvoltar");
     if (voltarEl) {
         voltarEl.style.cursor = "pointer";
         voltarEl.addEventListener("click", (e) => {
@@ -94,7 +75,34 @@ document.addEventListener("DOMContentLoaded", async () => {
             window.location.href = "pagamento.html";
         });
     }
+
+// Carrega os dados do usuário ao carregar a página
+document.addEventListener("DOMContentLoaded", async () => {
+    const email = localStorage.getItem("userEmail");
+    const user = usuarios.find((u) => u.email === email);
+
 });
 
+document.addEventListener("DOMContentLoaded", async () => {
+    const email = localStorage.getItem("userEmail");
 
+    if (!email) {
+        console.warn("Usuário não logado.");
+        return;
+    }
 
+    try {
+        const response = await fetch(`http://localhost:5001/api/usuario/saldo?email=${email}`);
+        if (response.ok) {
+            const data = await response.json();
+            const saldoEl = document.getElementById("dinheiro");
+            if (saldoEl) {
+                saldoEl.textContent = `R$ ${Number(data.saldo).toFixed(2).replace(".", ",")}`;
+            }
+        } else {
+            console.error("Erro ao buscar saldo:", await response.json());
+        }
+    } catch (error) {
+        console.error("Erro ao conectar com o servidor:", error);
+    }
+});
