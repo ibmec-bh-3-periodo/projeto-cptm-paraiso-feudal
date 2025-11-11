@@ -35,6 +35,15 @@
       "senha": "d1egos@ntos",
       "saldo": 46,
       "alerta": false
+    },
+    {
+      "id": 5,
+      "nome": "Thal",
+      "cpf": "123456789",
+      "email": "dantasthal@gmail.com",
+      "senha": "6773",
+      "saldo": 0,
+      "alerta": false
     }
   ]
 }
