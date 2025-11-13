@@ -43,6 +43,33 @@
       "email": "dantasthal@gmail.com",
       "senha": "6773",
       "saldo": 0,
+      "alerta": true
+    },
+    {
+      "id": 7,
+      "nome": "aaaa",
+      "cpf": "98765",
+      "email": "benbenben@gmail.com",
+      "senha": "12345",
+      "saldo": 0,
+      "alerta": false
+    },
+    {
+      "id": 9,
+      "nome": "thales",
+      "cpf": "123454",
+      "email": "tttt@gmail.com",
+      "senha": "123454",
+      "saldo": 0,
+      "alerta": true
+    },
+    {
+      "id": 8,
+      "nome": "soso",
+      "cpf": "098",
+      "email": "bebe@gmail.com",
+      "senha": "123",
+      "saldo": 0,
       "alerta": false
     }
   ]
