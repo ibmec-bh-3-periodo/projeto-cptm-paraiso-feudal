@@ -1,6 +1,6 @@
 const voltar = document.getElementById('voltar');
-const organizador = document.getElementById('organizador'); // botão vermelho
-const facaUmaDenuncia = document.getElementById('faça-uma-denuncia'); // botão vermelho pequeno
+const organizador = document.getElementById('organizador');
+const facaUmaDenuncia = document.getElementById('faça-uma-denuncia');
 const setaVoltar = document.getElementById('setavoltar');
 
 // ========================= VOLTAR PARA A HOME =========================
@@ -10,11 +10,31 @@ voltar.addEventListener('click', function () {
 
 // ========================= FUNÇÃO DE ATIVAR ALERTA =========================
 async function ativarAlerta() {
-  const idLogado = localStorage.getItem("idLogado"); // deve ser salvo no login com esse mesmo nome
+  // tenta buscar cpf do localStorage (compatível com várias chaves)
+  let cpfLogado = localStorage.getItem("cpfLogado");
+  
+  if (!cpfLogado) {
+    // fallback: tenta outras chaves possíveis
+    const possibleKeys = ["cpf", "usuarioAtual", "usuario"];
+    for (const k of possibleKeys) {
+      const raw = localStorage.getItem(k);
+      if (raw) {
+        try {
+          const parsed = JSON.parse(raw);
+          if (parsed && parsed.cpf) { cpfLogado = parsed.cpf; break; }
+        } catch (_) {
+          if (typeof raw === "string" && raw.replace(/\D/g, "").length >= 3) {
+            cpfLogado = raw;
+            break;
+          }
+        }
+      }
+    }
+  }
 
-  console.log("🔎 ID logado encontrado:", idLogado);
+  console.log("🔎 CPF logado encontrado:", cpfLogado);
 
-  if (!idLogado) {
+  if (!cpfLogado) {
     console.log("❌ Nenhum usuário logado. Não foi possível ativar o alerta.");
     return;
   }
@@ -24,15 +44,15 @@ async function ativarAlerta() {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        id: idLogado,
-        alerta: true, // altera o valor do campo alerta no JSON
+        cpf: cpfLogado,
+        alerta: true,
       }),
     });
 
     if (response.ok) {
       console.log("🚨 ALERTA ATIVADO COM SUCESSO!");
     } else {
-      console.error("⚠️ Erro ao ativar alerta:", response.status);
+      console.error("⚠️ Erro ao ativar alerta:", response.status, await response.text());
     }
   } catch (err) {
     console.error("🌐 Erro de conexão ao ativar alerta:", err);
@@ -42,14 +62,14 @@ async function ativarAlerta() {
 // ========================= BOTÃO VERMELHO GRANDE =========================
 organizador.addEventListener('click', async function (e) {
   e.preventDefault();
-  await ativarAlerta(); // altera alerta para true no JSON
-  window.location.href = 'denuncia.html'; // redireciona pra tela de denúncia
+  await ativarAlerta();
+  window.location.href = 'denuncia.html';
 });
 
 // ========================= BOTÃO "FAÇA UMA DENÚNCIA" =========================
 facaUmaDenuncia.addEventListener('click', async function () {
-  await ativarAlerta(); // também ativa o alerta
-  window.location.href = 'formularioDenuncia.html'; // redireciona pro formulário
+  await ativarAlerta();
+  window.location.href = 'formularioDenuncia.html';
 });
 
 // ========================= SETA DE VOLTAR =========================
